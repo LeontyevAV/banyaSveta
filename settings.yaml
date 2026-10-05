@@ -1,0 +1,17 @@
+# settings.yaml
+
+# Уровень логирования: DEBUG, INFO, WARNING, ERROR
+log_level: "WARNING"
+
+# Имя бота в таблице bots (используется для резолва bot_id)
+bot_name: "@banya_sveta_bot"
+
+# Информационный канал (username), из которого копируются сообщения
+channel_info: "@banya_sveta_info"
+
+# Настройки PostgreSQL
+pg_host: "localhost"
+pg_port: 5432
+pg_database: "labots"
+pg_username: "postgres"
+# PG_PASSWORD лучше хранить в .env, но можно и здесь, если файл не в git
