@@ -9,6 +9,12 @@ bot_name: "@banya_sveta_bot"
 # Информационный канал (username), из которого копируются сообщения
 channel_info: "@banya_sveta_info"
 
+# Основной канал (username) для проверки подписки
+channel_main: "@banya_sveta_krd"
+
+# Ссылка на канал (кнопки «Подписаться» / «Перейти на канал»)
+channel_url: "https://t.me/+sa8YSpe4XGthN2Vi"
+
 # Настройки PostgreSQL
 pg_host: "localhost"
 pg_port: 5432

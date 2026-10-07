@@ -3,8 +3,10 @@ import sys
 sys.path.insert(0, '/home/sasha/work/bots/banyaSveta')
 
 from bot.keyboards.inline_about_master import (  # noqa: E402
-    get_prev_message_data,
     keyboard_inline_about_master,
+)
+from bot.keyboards.prev import (  # noqa: E402
+    get_prev_message_data,
     parse_prev_message_data,
 )
 from bot.types import KeyboardArgs  # noqa: E402

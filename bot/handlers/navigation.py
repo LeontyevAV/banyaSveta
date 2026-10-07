@@ -4,10 +4,7 @@ from aiogram import F, Router
 from aiogram.exceptions import TelegramBadRequest
 from aiogram.types import CallbackQuery
 
-from bot.keyboards.inline_about_master import (
-    PREV_PREFIX,
-    parse_prev_message_data,
-)
+from bot.keyboards.prev import PREV_PREFIX, parse_prev_message_data
 
 logger = logging.getLogger(__name__)
 

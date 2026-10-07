@@ -40,6 +40,8 @@ class Settings(BaseSettings):
     bot_token: str = ''
     system_token: str = ''
     channel_info: str = ''
+    channel_main: str = ''
+    channel_url: str = ''
     proxy_url: str = ''
     debug: bool = False
     debug_user_id: int | None = None

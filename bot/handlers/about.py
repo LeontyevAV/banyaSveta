@@ -16,7 +16,7 @@ MESSAGE_IDS_ABOUT_BANYA = [51]
 @router.callback_query(F.data == ACTION_INLINE_ABOUT_MASTER)
 async def handle_about_master(callback: CallbackQuery) -> None:
     await copy_message_from_channel(
-        callback=callback,
+        event=callback,
         channel=settings.channel_info,
         message_ids=MESSAGE_IDS_ABOUT_MASTER,
         args=KeyboardArgs(button_caption=ACTION_INLINE_ABOUT_MASTER),
@@ -27,7 +27,7 @@ async def handle_about_master(callback: CallbackQuery) -> None:
 @router.callback_query(F.data == ACTION_INLINE_ABOUT_BANYA)
 async def handle_about_banya(callback: CallbackQuery) -> None:
     await copy_message_from_channel(
-        callback=callback,
+        event=callback,
         channel=settings.channel_info,
         message_ids=MESSAGE_IDS_ABOUT_BANYA,
         args=KeyboardArgs(button_caption=ACTION_INLINE_ABOUT_BANYA),
