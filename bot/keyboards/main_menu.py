@@ -11,10 +11,14 @@ from consts import (
 
 def main_menu_keyboard(is_admin: bool = False) -> ReplyKeyboardMarkup:
     rows = [
-        [KeyboardButton(text=ACTION_SERVICES)],
-        [KeyboardButton(text=ACTION_ABOUT_MASTER_BANYA)],
-        [KeyboardButton(text=ACTION_CERTIFICATE)],
-        [KeyboardButton(text=ACTION_GET_PRESENT)],
+        [
+            KeyboardButton(text=ACTION_ABOUT_MASTER_BANYA),
+            KeyboardButton(text=ACTION_SERVICES),
+        ],
+        [
+            KeyboardButton(text=ACTION_CERTIFICATE),
+            KeyboardButton(text=ACTION_GET_PRESENT),
+        ],
     ]
     if is_admin:
         rows.append([KeyboardButton(text=ACTION_MODERATION)])

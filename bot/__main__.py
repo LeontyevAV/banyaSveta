@@ -17,6 +17,11 @@ logger = logging.getLogger(__name__)
 ROOT_DIR = Path(__file__).resolve().parent.parent
 
 
+async def on_startup(bot: Bot) -> None:
+    me = await bot.get_me()
+    print(f'Бот @{me.username} запущен. Нажмите Ctrl+C для остановки.')
+
+
 async def main():
     log_format = '%(asctime)s [%(levelname)s] %(name)s: %(message)s'
     logging.basicConfig(
@@ -48,6 +53,7 @@ async def main():
     logger.info('Bot created (proxy=%s)', bool(settings.proxy_url))
 
     dp = Dispatcher()
+    dp.startup.register(on_startup)
     dp.include_router(router)
 
     await bot.delete_webhook(drop_pending_updates=settings.debug)
