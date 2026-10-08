@@ -3,6 +3,9 @@
 # Уровень логирования: DEBUG, INFO, WARNING, ERROR
 log_level: "WARNING"
 
+# Автоматически применять миграции БД при старте бота
+migrations_auto: true
+
 # Имя бота в таблице bots (используется для резолва bot_id)
 bot_name: "@banya_sveta_bot"
 

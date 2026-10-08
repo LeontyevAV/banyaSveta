@@ -10,7 +10,8 @@ from aiogram.enums import ParseMode
 
 from bot.routers import router
 from config import settings
-from db import close_pool, init_pool
+from db import close_pool, get_pool, init_pool
+from db.migrate import apply_migrations
 
 logger = logging.getLogger(__name__)
 
@@ -42,6 +43,11 @@ async def main():
     await init_pool()
     logger.info('Database connected')
     logger.info('DEBUG Target ID from settings: %s', settings.debug_user_id)
+
+    if settings.migrations_auto:
+        async with get_pool().acquire() as conn:
+            applied = await apply_migrations(conn)
+        logger.info('Migrations applied: %s', applied or 'none')
 
     aiohttp_session = AiohttpSession(proxy=settings.proxy_url or None)
 

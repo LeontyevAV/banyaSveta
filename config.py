@@ -53,6 +53,7 @@ class Settings(BaseSettings):
     pg_password: str = ''
 
     log_level: str = 'WARNING'
+    migrations_auto: bool = True
 
     @classmethod
     def settings_customise_sources(
