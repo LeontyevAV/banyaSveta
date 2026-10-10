@@ -2,7 +2,7 @@ from aiogram.types import InlineKeyboardMarkup
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 from bot.types import KeyboardArgs
-from consts import ACTION_INLINE_PREV_MESSAGE
+from consts import ACTION_INLINE_BACK
 
 PREV_PREFIX = 'prev:'
 
@@ -21,7 +21,7 @@ def parse_prev_message_data(data: str) -> list[int]:
 def keyboard_inline_prev_message(args: KeyboardArgs) -> InlineKeyboardMarkup:
     builder = InlineKeyboardBuilder()
     builder.button(
-        text=ACTION_INLINE_PREV_MESSAGE,
+        text=ACTION_INLINE_BACK,
         callback_data=get_prev_message_data(args.remove_message_ids),
     )
     builder.adjust(1)

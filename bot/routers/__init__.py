@@ -4,6 +4,7 @@ from bot.handlers import (
     about,
     contacts,
     menu,
+    moderation,
     navigation,
     reviews,
     services,
@@ -12,6 +13,7 @@ from bot.handlers import (
 
 router = Router()
 router.include_router(start.router)
+router.include_router(moderation.router)
 router.include_router(menu.router)
 router.include_router(services.router)
 router.include_router(reviews.router)

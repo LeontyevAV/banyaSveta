@@ -9,6 +9,9 @@ migrations_auto: true
 # Имя бота в таблице bots (используется для резолва bot_id)
 bot_name: "@banya_sveta_bot"
 
+# Имя тестового бота в таблице bots — используется вместо bot_name, когда DEBUG=1 в .env
+bot_name_test: "@lalocaltest_bot"
+
 # Информационный канал (username), из которого копируются сообщения
 channel_info: "@banya_sveta_info"
 

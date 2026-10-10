@@ -4,7 +4,6 @@ from aiogram import F, Router
 from aiogram.exceptions import TelegramBadRequest
 from aiogram.types import Message
 
-from bot.handlers.start import is_admin
 from bot.keyboards import (
     inline_master_banya_keyboard,
     inline_services_keyboard,
@@ -19,7 +18,6 @@ from consts import (
     ACTION_ABOUT_MASTER_BANYA,
     ACTION_CERTIFICATE,
     ACTION_GET_PRESENT,
-    ACTION_MODERATION,
     ACTION_SERVICES,
 )
 
@@ -33,14 +31,6 @@ MESSAGE_IDS_GET_PRESENT = [65]
 GET_PRESENT_SUBSCRIBE_TEXT = (
     'Чтобы получить подарок, подпишитесь на канал «БАНЯ СВЕТА» 🤗\n'
     'и снова нажмите «Получить подарок»'
-)
-
-MODERATION_HELP_TEXT = (
-    '# users - список всех пользователей\n'
-    '# post 13_59_02_04_2026  # messageId_56 - отложенное сообщение\n'
-    '  на 13:59 02.04.2026 с ИД 56 (В РАЗРАБОТКЕ)\n'
-    '# messageId_56 - мгновенное сообщение с ид 56\n'
-    '# text Привет )) - мгновенное сообщение с заданным текстом'
 )
 
 
@@ -124,18 +114,3 @@ async def handle_get_present(message: Message) -> None:
             KeyboardArgs(remove_message_ids=[sent.message_id]),
         ),
     )
-
-
-@router.message(F.text == ACTION_MODERATION)
-async def handle_moderation(message: Message) -> None:
-    if message.from_user is None or not is_admin(message.from_user.id):
-        return
-    await message.answer(MODERATION_HELP_TEXT)
-    try:
-        await log_button(message.from_user, ACTION_MODERATION)
-    except Exception:
-        logger.exception('Ошибка логирования нажатия кнопки')
-    try:
-        await message.delete()
-    except TelegramBadRequest:
-        logger.debug('Не удалось удалить сообщение пользователя')

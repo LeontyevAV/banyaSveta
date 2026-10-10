@@ -7,8 +7,6 @@ ACTION_INLINE_ASK_QUESTION = '❓ Задать вопрос'
 ACTION_INLINE_CONTACTS = '📞 Контакты, соц. сети'
 ACTION_INLINE_CONTACT = '✏️ Связаться'
 
-ACTION_INLINE_PREV_MESSAGE = '<< Назад'
-
 ACTION_INLINE_SERVICES = '📋 Услуги'
 ACTION_INLINE_WARM_INSIDE = 'Программа «Тепло внутри» 4 чел'
 ACTION_INLINE_HARMONY_IN_COUPLE = 'Программа «Гармония в паре» 2 чел'
@@ -21,6 +19,16 @@ ACTION_INLINE_REGISTER = '✏️ Записаться'
 
 ACTION_INLINE_SUBSCRIBE_CHANNEL = '✅ Подписаться на канал'
 ACTION_INLINE_GOTO_CHANEL = '🚶🏼 Перейти на канал'
+
+ACTION_INLINE_MAILING_BY_MESSAGE = 'Разослать сообщение по номеру'
+ACTION_INLINE_MAILING_BY_TEXT = 'Разослать текст'
+ACTION_INLINE_MOD_USERS = '👥 Список пользователей'
+ACTION_INLINE_BACK = '<< Назад'
+
+CALLBACK_MOD_MAILING_MESSAGE = 'mod:mailing:message'
+CALLBACK_MOD_MAILING_TEXT = 'mod:mailing:text'
+CALLBACK_MOD_USERS = 'mod:users'
+CALLBACK_MOD_BACK = 'mod:back'
 
 ACTION_SERVICES = '📋 Услуги'
 ACTION_SCHEDULE = '🗓️ Расписание'

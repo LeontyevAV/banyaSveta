@@ -1,6 +1,10 @@
 from bot.keyboards.inline_certificate import keyboard_inline_certificate
 from bot.keyboards.inline_contacts import keyboard_inline_contacts
 from bot.keyboards.inline_master_banya import inline_master_banya_keyboard
+from bot.keyboards.inline_moderation import (
+    keyboard_inline_moderation,
+    keyboard_inline_moderation_back,
+)
 from bot.keyboards.inline_reviews import keyboard_inline_reviews
 from bot.keyboards.inline_service_info import keyboard_inline_service_info
 from bot.keyboards.inline_services import inline_services_keyboard
@@ -13,6 +17,8 @@ __all__ = [
     'inline_services_keyboard',
     'keyboard_inline_certificate',
     'keyboard_inline_contacts',
+    'keyboard_inline_moderation',
+    'keyboard_inline_moderation_back',
     'keyboard_inline_prev_message',
     'keyboard_inline_reviews',
     'keyboard_inline_service_info',

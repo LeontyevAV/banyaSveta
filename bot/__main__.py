@@ -7,6 +7,7 @@ from aiogram import Bot, Dispatcher
 from aiogram.client.default import DefaultBotProperties
 from aiogram.client.session.aiohttp import AiohttpSession
 from aiogram.enums import ParseMode
+from aiogram.fsm.storage.memory import MemoryStorage
 
 from bot.routers import router
 from config import settings
@@ -58,7 +59,7 @@ async def main():
     )
     logger.info('Bot created (proxy=%s)', bool(settings.proxy_url))
 
-    dp = Dispatcher()
+    dp = Dispatcher(storage=MemoryStorage())
     dp.startup.register(on_startup)
     dp.include_router(router)
 

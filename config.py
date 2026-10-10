@@ -37,6 +37,7 @@ class Settings(BaseSettings):
     )
 
     bot_name: str = '@banya_sveta_bot'
+    bot_name_test: str = '@banyatest_bot'
     bot_token: str = ''
     system_token: str = ''
     channel_info: str = ''
@@ -54,6 +55,10 @@ class Settings(BaseSettings):
 
     log_level: str = 'WARNING'
     migrations_auto: bool = True
+
+    @property
+    def bot_name_effective(self) -> str:
+        return self.bot_name_test if self.debug else self.bot_name
 
     @classmethod
     def settings_customise_sources(
